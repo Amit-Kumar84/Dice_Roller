@@ -2,4 +2,5 @@
     <string name="app_name">Dice Roller</string>
     <string name="rolle">Rolle</string>
     <string name="todo">TODO</string>
+    <string name="dice_rolled">Dice Rolled: %1$d</string>
 </resources>

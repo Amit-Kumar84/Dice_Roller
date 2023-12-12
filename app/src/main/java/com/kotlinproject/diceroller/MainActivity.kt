@@ -5,7 +5,8 @@ import android.os.Bundle
 
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.Toast
+import android.widget.TextView
+
 
 
 /**
@@ -39,6 +40,7 @@ Roll the Dice and Update the Screen with the result.
         val diceRoll = dice.roll()
     //Update the screen  with the dice roll
         val diceImage: ImageView = findViewById(R.id.imageView)
+    val diceImage2: ImageView = findViewById(R.id.imageView2)
 
     val drawableResource = when (diceRoll) {
         1 -> R.drawable.dice_1
@@ -49,14 +51,19 @@ Roll the Dice and Update the Screen with the result.
         else -> R.drawable.dice_6
     }
     diceImage.setImageResource(drawableResource)
+    diceImage2.setImageResource(drawableResource)
 
     diceImage.contentDescription = diceRoll.toString()
+    diceImage2.contentDescription = diceRoll.toString()
+    val resultTextView: TextView = findViewById(R.id.textView)
+    resultTextView.text = getString(R.string.dice_rolled,diceRoll)
     }
 }
 
 class Dice(private val numSides: Int) {
     fun roll(): Int {
         return (1..numSides).random()
+
     }
 
 }
